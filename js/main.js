@@ -76,12 +76,12 @@ const RESUME = {
       note: "Testsaurus is Ninja Van’s internal test management platform."
     },
     { name: "Documentation", items: ["Confluence"] },
-    { name: "Devices", items: ["Smartphone Test Farm"] },
-    { name: "API", items: ["Postman", "Apidog", "cURL"] },
+    { name: "Devices", items: ["Smartphone Test Farm", "Vysor"] },
+    { name: "API", items: ["Postman", "Apidog", "cURL", "Mockoon"] },
     { name: "Databases", items: ["MySQL", "TiDB", "DBeaver"] },
     { name: "Monitoring", items: ["Kibana", "Grafana", "Metabase"] },
     { name: "CI/CD and code", items: ["Bamboo", "GitHub", "Bitbucket", "IntelliJ"] },
-    { name: "Used with AI", items: ["Python", "Playwright", "Maestro"] }
+    { name: "Used with AI", items: ["Python", "Playwright", "Maestro", "Maestro Studio"] }
   ],
   experience: {
     kicker: "Experience",
