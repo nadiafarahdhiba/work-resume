@@ -232,7 +232,7 @@ a { color: inherit; }
 
 .process {
   list-style: none;
-  margin: 36px 0 0;
+  margin: 28px 0 0;
   padding: 0;
 }
 
@@ -242,17 +242,39 @@ a { color: inherit; }
   gap: 8px 12px;
   padding: 22px 0;
   border-top: 1px solid var(--line);
+  opacity: 0.42;
+  transition: opacity 0.55s ease;
 }
 
 .process li:last-child { border-bottom: 1px solid var(--line); }
+
+.process li.is-on { opacity: 1; }
 
 .step-no {
   font-family: var(--serif);
   font-size: 1.45rem;
   letter-spacing: -0.03em;
-  color: var(--accent);
+  color: var(--muted);
   padding-top: 2px;
+  transition: color 0.55s ease, transform 0.55s ease;
 }
+
+.process li.is-on .step-no {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.process h3 {
+  display: inline-block;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  padding-bottom: 2px;
+  transition: background-size 0.7s ease;
+}
+
+.process li.is-on h3 { background-size: 100% 1px; }
 
 .process h3,
 .skill-list h3,
@@ -520,6 +542,18 @@ footer a { color: var(--accent); text-underline-offset: 3px; }
     transform: none;
     transition: none;
   }
+
+  .process li,
+  .process li.is-on {
+    opacity: 1;
+    transition: none;
+  }
+
+  .step-no,
+  .process li.is-on .step-no { transform: none; transition: none; }
+
+  .process h3,
+  .process li.is-on h3 { transition: none; background-size: 0 0; }
 }
 
 @media print {

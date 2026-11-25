@@ -34,7 +34,8 @@ const RESUME = {
   },
   skills: {
     kicker: "Skills",
-    title: "A release, from start to finish",
+    title: "How I take a release",
+    lead: "This is the flow I follow as a QA. On a typical change I walk the same path, from the requirement to the sign-off.",
     groupsTitle: "What I practice",
     groups: [
       {
@@ -47,7 +48,7 @@ const RESUME = {
       },
       {
         name: "Automation support",
-        detail: "Regression runs and failed-build triage with automation engineers. Scripting with Python, Karate, Playwright, Maestro, and Testsaurus."
+        detail: "Regression runs and failed-build triage with automation engineers. I have some experience with Python, Playwright, Maestro, and Testsaurus, using AI while I work in them."
       },
       {
         name: "Domain",
@@ -55,11 +56,11 @@ const RESUME = {
       }
     ],
     process: [
-      { title: "Requirements", detail: "Read what the change is supposed to do." },
-      { title: "Test design", detail: "Write the cases that will prove it." },
-      { title: "Execution", detail: "Run those cases against the build." },
-      { title: "Defects", detail: "Record what failed, clearly enough to fix." },
-      { title: "Release", detail: "Follow the debugging and check the fix." }
+      { title: "Read the requirement", detail: "I start with what the change is supposed to do, and where it could break." },
+      { title: "Design the tests", detail: "I turn that into a plan and cases, by hand or in Gherkin, for the path that should work and the ones that should fail." },
+      { title: "Run them", detail: "I test by hand, then regression, smoke, and user acceptance, across mobile, web, and API." },
+      { title: "Write the defects", detail: "What fails gets a clear report, and I follow it until it is fixed." },
+      { title: "Sign off", detail: "I recheck the fix, look at the regression run, and then say whether the release is ready." }
     ]
   },
   toolsTitle: "Tools",
@@ -69,7 +70,7 @@ const RESUME = {
     { name: "Monitoring", items: ["Kibana", "Grafana", "Metabase"] },
     { name: "Test management", items: ["Jira", "Confluence", "Cucumber Studio", "Smartphone Test Farm"] },
     { name: "Delivery", items: ["Bamboo", "GitHub", "Bitbucket", "IntelliJ"] },
-    { name: "Automation", items: ["Python", "Karate", "Playwright", "Maestro", "Testsaurus"] }
+    { name: "Used with AI", items: ["Python", "Playwright", "Maestro", "Testsaurus"] }
   ],
   experience: {
     kicker: "Experience",
@@ -185,14 +186,8 @@ const RESUME = {
     kicker: "Education",
     title: "Study",
     degree: "Bachelor of Science in Biology",
-    detail: "Sub-major: Marine Chemical Ecology",
     school: "Universitas Indonesia",
-    years: "2012 — 2016",
-    notes: [
-      "GPA 3.36 / 4.00, 146 credits",
-      "HMD Biologi UI",
-      "Special Interest Group in Marine Biology UI (SIGMA-B UI)"
-    ]
+    years: "2012 — 2016"
   },
   /* Add a certification by putting a line in this list. An empty list stays hidden. */
   certifications: [],
@@ -419,6 +414,23 @@ function fillFooter() {
     `© ${year} ${RESUME.name} · ${RESUME.contact.country}`;
 }
 
+function playFlow() {
+  const items = [...document.querySelectorAll(".process li")];
+  if (!items.length) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) {
+    items.forEach((item) => item.classList.add("is-on"));
+    return;
+  }
+  let index = 0;
+  const show = () => {
+    items.forEach((item, step) => item.classList.toggle("is-on", step === index));
+    index = (index + 1) % items.length;
+  };
+  show();
+  window.setInterval(show, 2400);
+}
+
 function reveal() {
   const nodes = document.querySelectorAll(".reveal");
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
@@ -439,6 +451,7 @@ fillFields();
 fillParagraphs();
 fillNav();
 fillProcess();
+playFlow();
 fillSkills();
 fillTools();
 fillJobs();
