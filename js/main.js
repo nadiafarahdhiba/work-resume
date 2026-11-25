@@ -48,7 +48,7 @@ const RESUME = {
       },
       {
         name: "Automation support",
-        detail: "Regression runs and failed-build triage with automation engineers. I have some experience with Python, Playwright, Maestro, and Testsaurus, using AI while I work in them."
+        detail: "Regression runs and failed-build triage with automation engineers. I have some experience with Python, Playwright, and Maestro, using AI while I work in them."
       },
       {
         name: "Domain",
@@ -66,11 +66,18 @@ const RESUME = {
   toolsTitle: "Tools",
   /* Add a tool by putting its name in the matching items list. */
   tools: [
-    { name: "API and data", items: ["Postman", "Apidog", "cURL", "MySQL", "TiDB", "DBeaver"] },
+    {
+      name: "Test management",
+      items: ["Jira", "Cucumber Studio", "Testsaurus"],
+      note: "Testsaurus is Ninja Van’s internal test management platform."
+    },
+    { name: "Documentation", items: ["Confluence"] },
+    { name: "Devices", items: ["Smartphone Test Farm"] },
+    { name: "API", items: ["Postman", "Apidog", "cURL"] },
+    { name: "Databases", items: ["MySQL", "TiDB", "DBeaver"] },
     { name: "Monitoring", items: ["Kibana", "Grafana", "Metabase"] },
-    { name: "Test management", items: ["Jira", "Confluence", "Cucumber Studio", "Smartphone Test Farm"] },
-    { name: "Delivery", items: ["Bamboo", "GitHub", "Bitbucket", "IntelliJ"] },
-    { name: "Used with AI", items: ["Python", "Playwright", "Maestro", "Testsaurus"] }
+    { name: "CI/CD and code", items: ["Bamboo", "GitHub", "Bitbucket", "IntelliJ"] },
+    { name: "Used with AI", items: ["Python", "Playwright", "Maestro"] }
   ],
   experience: {
     kicker: "Experience",
@@ -88,7 +95,7 @@ const RESUME = {
           "Contributed to QA on 5+ major regional initiatives: process flows, early corner cases, risk checks, and test strategy.",
           "QA person-in-charge for First Mile, and also tested Last Mile, PUDO, and Ninja Mart. Coordinated sprint tasks and onboarded new testers on the QA workflow and product architecture.",
           "Worked with developers and squads in Indonesia, Malaysia, the Philippines, Singapore, Thailand, and Vietnam. Triaged operations tech-support tickets, ran eligible in-sprint tickets through existing automation, and investigated failed regression runs with automation engineers. Execution runtime reduction scored 98.3%.",
-          "Led test-scenario reduction and reprioritization for First Mile, Last Mile, and PUDO, tracked in Metabase. Used AI-assisted tools for task tracking, scenario data, Python and Testsaurus migrations, and daily QA notes."
+          "Led test-scenario reduction and reprioritization for First Mile, Last Mile, and PUDO, tracked in Metabase. Used AI-assisted tools for task tracking, scenario queries, a Python migration, moving cases into Testsaurus, and daily QA notes."
         ]
       },
       {
@@ -285,6 +292,7 @@ function fillTools() {
     const item = el("li");
     item.append(el("h3", null, group.name));
     item.append(el("p", null, group.items.join(" · ")));
+    if (group.note) item.append(el("p", null, group.note));
     list.append(item);
   });
   slot.append(list);
