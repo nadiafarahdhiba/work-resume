@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadia Farah Dhiba — Senior Software QA Engineer</title>
+  <meta name="description" content="Senior Software QA Engineer with 8+ years of experience ensuring high-reliability releases across mobile applications, web platforms, and APIs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            canvas: '#FAFAFA',
+            surface: '#FFFFFF',
+            ink: '#111827',
+            muted: '#6B7280',
+            line: '#E5E7EB',
+            accent: '#0F766E',
+            accentLight: '#F0FDFA',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAFAFA;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skill-pill {
+      transition: all 0.2s ease;
+    }
+    .skill-pill:hover {
+      border-color: #0F766E;
+      color: #0F766E;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body id="top" class="font-sans text-ink selection:bg-teal-100 selection:text-teal-900">
+
+  <!-- Sticky Navigation -->
+  <header class="sticky top-0 z-50 bg-canvas/85 backdrop-blur-md border-b border-line">
+    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight text-ink hover:text-accent transition-colors">
+        Nadia Farah Dhiba
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm text-muted">
+        <a href="#about" class="hover:text-ink transition-colors" data-en="About" data-id="Tentang">About</a>
+        <a href="#experience" class="hover:text-ink transition-colors" data-en="Experience" data-id="Pengalaman">Experience</a>
+        <a href="#skills" class="hover:text-ink transition-colors" data-en="Skills" data-id="Keahlian">Skills</a>
+        <a href="#education" class="hover:text-ink transition-colors" data-en="Education" data-id="Pendidikan">Education</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Toggle -->
+        <div class="inline-flex rounded-lg border border-line bg-surface p-0.5 text-xs font-mono">
+          <button id="btn-en" onclick="setLang('en')" class="px-2.5 py-1 rounded-md bg-ink text-white font-medium transition-colors">EN</button>
+          <button id="btn-id" onclick="setLang('id')" class="px-2.5 py-1 rounded-md text-muted hover:text-ink transition-colors">ID</button>
+        </div>
+
+        <a href="#contact" class="text-xs sm:text-sm font-medium bg-ink text-white px-3.5 py-2 rounded-lg hover:bg-accent transition-colors" data-en="Get in touch" data-id="Hubungi saya">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6">
+
+    <!-- Hero Section -->
+    <section class="py-20 md:py-28 border-b border-line">
+      <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-10">
+        <div class="space-y-5 max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-accent bg-accentLight border border-teal-200 px-3 py-1 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-teal-600 animate-pulse"></span>
+            <span data-en="Senior Software QA Engineer · Jakarta, Indonesia" data-id="Senior Software QA Engineer · Jakarta, Indonesia">Senior Software QA Engineer · Jakarta, Indonesia</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-ink leading-tight">
+            Nadia Farah Dhiba
+          </h1>
+
+          <p class="text-lg sm:text-xl text-muted leading-relaxed" data-en="Edge cases caught early. Releases shipped with confidence." data-id="Edge case terdeteksi sejak dini. Rilis berjalan penuh percaya diri.">
+            Edge cases caught early. Releases shipped with confidence.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#experience" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-ink text-white text-sm font-medium hover:bg-accent transition-colors" data-en="View experience" data-id="Lihat pengalaman">
+              View experience
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg border border-line bg-surface text-ink text-sm font-medium hover:border-ink transition-colors" data-en="Contact me ›" data-id="Kontak saya ›">
+              Contact me ›
+            </a>
+          </div>
+        </div>
+
+        <!-- Monogram Avatar Badge (Replace with your photo if desired) -->
+        <div class="shrink-0">
+          <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-surface border border-line shadow-sm flex flex-col items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-50/70 via-transparent to-gray-100/70"></div>
+            <span class="relative text-3xl sm:text-4xl font-bold tracking-tight text-ink">ND</span>
+            <span class="relative mt-1 text-[11px] font-mono text-muted">8+ YRS QA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Key Metrics -->
+    <section id="about" class="py-16 md:py-20 border-b border-line">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-muted" data-en="01 / About" data-id="01 / Tentang">01 / About</h2>
+          <p class="mt-2 text-xl font-semibold text-ink" data-en="Quality built into every stage of delivery." data-id="Kualitas terjaga di setiap tahap pengembangan.">
+            Quality built into every stage of delivery.
+          </p>
+        </div>
+
+        <div class="md:col-span-8 space-y-6">
+          <p class="text-base text-gray-700 leading-relaxed" data-en="Senior Software QA Engineer with 8+ years of experience ensuring high-reliability releases across mobile applications, web platforms, and APIs in fast-paced logistics and e-commerce environments (Ninja Van, Astro, and Bukalapak). I specialize in manual, end-to-end, functional, regression, smoke, and user acceptance testing (UAT)—partnering closely with Product Managers, Developers, and cross-functional regional squads to catch edge cases early and maintain production stability." data-id="Senior Software QA Engineer dengan pengalaman lebih dari 8 tahun dalam memastikan keandalan rilis aplikasi mobile, platform web, dan API di lingkungan logistik dan e-commerce yang dinamis (Ninja Van, Astro, dan Bukalapak). Berpengalaman dalam manual, end-to-end, functional, regression, smoke, dan user acceptance testing (UAT)—bekerja sama erat dengan Product Manager, Developer, dan tim lintas negara untuk mendeteksi edge case sejak dini dan menjaga stabilitas produksi.">
+            Senior Software QA Engineer with 8+ years of experience ensuring high-reliability releases across mobile applications, web platforms, and APIs in fast-paced logistics and e-commerce environments (Ninja Van, Astro, and Bukalapak). I specialize in manual, end-to-end, functional, regression, smoke, and user acceptance testing (UAT)—partnering closely with Product Managers, Developers, and cross-functional regional squads to catch edge cases early and maintain production stability.
+          </p>
+
+          <p class="text-base text-gray-700 leading-relaxed" data-en="Beyond core test execution, I collaborate with automation teams on regression runs and failure triage, mentor new QA teammates, and integrate AI-assisted workflows to accelerate test analysis, scenario data querying, and technical documentation." data-id="Selain eksekusi pengujian utama, saya berkolaborasi dengan tim automation dalam menjalankan regression suite dan investigasi kegagalan, membimbing anggota QA baru, serta mengintegrasikan alur kerja berbasis AI untuk mempercepat analisis pengujian, query data skenario, dan dokumentasi teknis.">
+            Beyond core test execution, I collaborate with automation teams on regression runs and failure triage, mentor new QA teammates, and integrate AI-assisted workflows to accelerate test analysis, scenario data querying, and technical documentation.
+          </p>
+
+          <!-- Metric Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-surface border border-line">
+              <div class="text-2xl font-bold text-ink">8+ yrs</div>
+              <div class="text-xs text-muted mt-1" data-en="QA & Testing Experience" data-id="Pengalaman QA & Testing">QA & Testing Experience</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface border border-line">
+              <div class="text-2xl font-bold text-accent">5.0 / 5.0</div>
+              <div class="text-xs text-muted mt-1" data-en="Testing Efficiency Rating" data-id="Skor Efisiensi Testing">Testing Efficiency Rating</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface border border-line col-span-2 sm:col-span-1">
+              <div class="text-2xl font-bold text-ink">96.3%</div>
+              <div class="text-xs text-muted mt-1" data-en="Tech Delivery Quality" data-id="Kualitas Pengiriman Tech">Tech Delivery Quality</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-20 border-b border-line">
+      <div class="mb-10">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-muted" data-en="02 / Experience" data-id="02 / Pengalaman">02 / Experience</h2>
+        <p class="mt-2 text-2xl font-semibold text-ink" data-en="Career Timeline" data-id="Perjalanan Karier">Career Timeline</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Role 1 -->
+        <article class="p-6 sm:p-7 rounded-2xl bg-surface border border-line">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">Senior Software Tester</h3>
+              <p class="text-sm font-medium text-accent">Ninja Van</p>
+            </div>
+            <span class="text-xs font-mono text-muted">Feb 2023 – Dec 2026</span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-sm text-gray-700 list-disc pl-5 leading-relaxed">
+            <li>Spearheaded end-to-end manual and regression quality assurance across First Mile, Last Mile, PUDO, and Ninja Mart mobile apps, web platforms, and APIs—supporting <strong>100%</strong> automation test coverage, achieving <strong>96.3%</strong> tech delivery quality, and earning a <strong>5.0/5.0 (Outstanding)</strong> Testing Efficiency rating across First Mile (5.0), Last Mile (5.0), and PUDO (4.85).</li>
+            <li>Contributed to QA project execution across <strong>5+</strong> major regional initiatives by establishing process flows, identifying and validating corner cases early, mitigating critical risks, and formulating comprehensive testing strategies.</li>
+            <li>Served as <strong>QA Person-in-Charge (PIC)</strong> for First Mile and expanded domain testing across Last Mile and PUDO workflows, coordinating sprint task distribution and onboarding new teammates.</li>
+            <li>Collaborated with developers and regional squads across ID, MY, PH, SG, TH, and VN to triage Operations tech support tickets, execute <strong>100%</strong> of eligible in-sprint tickets via existing automation suites, and resolve failed regression runs alongside automation engineers to achieve a <strong>98.3%</strong> runtime reduction score.</li>
+            <li>Led test scenario reduction and reprioritization across First Mile, Last Mile, and PUDO (monitored via Metabase) and integrated AI-assisted tools for task tracking, scenario data querying, Python and Testsaurus migrations, and QA documentation.</li>
+          </ul>
+        </article>
+
+        <!-- Role 2 -->
+        <article class="p-6 sm:p-7 rounded-2xl bg-surface border border-line">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">QA Engineer</h3>
+              <p class="text-sm font-medium text-accent">PT. Astro Technologies Indonesia</p>
+            </div>
+            <span class="text-xs font-mono text-muted">Sep 2022 – Jan 2023</span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-sm text-gray-700 list-disc pl-5 leading-relaxed">
+            <li>Partnered with product teams to analyze functional specifications, define testing scopes, and design comprehensive test scenarios aligned with business requirements.</li>
+            <li>Executed end-to-end, pre-deployment, and post-deployment regression and sanity testing across Astro’s mobile apps, web platforms, and APIs in staging and production environments.</li>
+            <li>Logged, prioritized, and tracked defects through resolution in JIRA to maintain high production stability.</li>
+          </ul>
+        </article>
+
+        <!-- Role 3 -->
+        <article class="p-6 sm:p-7 rounded-2xl bg-surface border border-line">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">Software Tester</h3>
+              <p class="text-sm font-medium text-accent">Ninja Van</p>
+            </div>
+            <span class="text-xs font-mono text-muted">Apr 2020 – Sep 2022</span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-sm text-gray-700 list-disc pl-5 leading-relaxed">
+            <li>Served as <strong>QA Person-in-Charge (PIC) for 2 squads</strong> (Partnership Integration and CoreV2) under the mile0 vertical, managing sprint task distribution and supporting <strong>5 QA engineers</strong>.</li>
+            <li>Designed comprehensive test plans and executed manual, regression, smoke, and UAT across client- and server-side products, API platforms, and server infrastructure.</li>
+            <li>Issued final QA sign-offs for releases, standardized QA best practices, and authored onboarding product documentation.</li>
+          </ul>
+        </article>
+
+        <!-- Role 4 -->
+        <article class="p-6 sm:p-7 rounded-2xl bg-surface border border-line">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">Software Quality Assurance</h3>
+              <p class="text-sm font-medium text-accent">Mapan – PT. Ruma</p>
+            </div>
+            <span class="text-xs font-mono text-muted">Sep 2019 – Apr 2020</span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-sm text-gray-700 list-disc pl-5 leading-relaxed">
+            <li>Validated in-project deployments for the SAP Project supporting the Finance team and aligned testing schedules with release readiness milestones.</li>
+            <li>Collaborated with developers to troubleshoot database, performance, and system issues prior to deployment.</li>
+          </ul>
+        </article>
+
+        <!-- Role 5 -->
+        <article class="p-6 sm:p-7 rounded-2xl bg-surface border border-line">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">Software Quality Analyst & User Acceptance Tester</h3>
+              <p class="text-sm font-medium text-accent">PT. Bukalapak.com</p>
+            </div>
+            <span class="text-xs font-mono text-muted">May 2018 – Sep 2019</span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-sm text-gray-700 list-disc pl-5 leading-relaxed">
+            <li>Executed manual, regression, exploratory UX, and UAT across beta and production environments within Agile/Scrum squads, authoring structured positive/negative test cases in manual and Gherkin formats.</li>
+            <li>Served as <strong>Actor Lead</strong> in UAT, supervising end-to-end User Journey testing, delegating test scopes, interviewing UAT candidates, and issuing formal release sign-offs.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-20 border-b border-line">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-muted" data-en="03 / Skills & Tools" data-id="03 / Keahlian & Tools">03 / Skills & Tools</h2>
+          <p class="mt-2 text-2xl font-semibold text-ink" data-en="Technical Stack" data-id="Kemampuan Teknis">Technical Stack</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <button onclick="filterSkills('all', this)" class="filter-btn px-3 py-1.5 rounded-lg bg-ink text-white">All</button>
+          <button onclick="filterSkills('testing', this)" class="filter-btn px-3 py-1.5 rounded-lg bg-surface border border-line text-muted hover:text-ink">Testing</button>
+          <button onclick="filterSkills('api-db', this)" class="filter-btn px-3 py-1.5 rounded-lg bg-surface border border-line text-muted hover:text-ink">API & DB</button>
+          <button onclick="filterSkills('automation', this)" class="filter-btn px-3 py-1.5 rounded-lg bg-surface border border-line text-muted hover:text-ink">Automation & CI</button>
+          <button onclick="filterSkills('tools', this)" class="filter-btn px-3 py-1.5 rounded-lg bg-surface border border-line text-muted hover:text-ink">Tools & AI</button>
+        </div>
+      </div>
+
+      <div id="skills-grid" class="flex flex-wrap gap-2.5">
+        <!-- Testing -->
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Manual Testing (Mobile, Web, API)</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">End-to-End (E2E) Testing</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Functional & Regression Testing</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Smoke & Sanity Testing</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">User Acceptance Testing (UAT)</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Exploratory UX Testing</span>
+        <span data-cat="testing" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Gherkin Syntax & Test Case Design</span>
+
+        <!-- API & DB -->
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Postman</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Apidog</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">cURL</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">MySQL</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">TiDB</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">DBeaver</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Kibana</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Grafana</span>
+        <span data-cat="api-db" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Metabase</span>
+
+        <!-- Automation & CI -->
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Bamboo CI/CD</span>
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">GitHub & Bitbucket</span>
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Playwright (Basic)</span>
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Python (Basic)</span>
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Karate & Testsaurus</span>
+        <span data-cat="automation" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Maestro</span>
+
+        <!-- Tools & AI -->
+        <span data-cat="tools" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">JIRA & Confluence</span>
+        <span data-cat="tools" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Cucumber Studio</span>
+        <span data-cat="tools" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Smartphone Test Farm (STF)</span>
+        <span data-cat="tools" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">AI-Assisted QA Workflows</span>
+        <span data-cat="tools" class="skill-pill px-3.5 py-2 rounded-lg bg-surface border border-line text-sm text-ink">Agile / Scrum</span>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-20 border-b border-line">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-muted" data-en="04 / Education" data-id="04 / Pendidikan">04 / Education</h2>
+          <p class="mt-2 text-xl font-semibold text-ink" data-en="Academic Background" data-id="Latar Belakang Pendidikan">Academic Background</p>
+        </div>
+
+        <div class="md:col-span-8">
+          <div class="p-6 rounded-2xl bg-surface border border-line">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="text-lg font-semibold text-ink">Universitas Indonesia</h3>
+              <span class="text-xs font-mono text-muted">2012 – 2016</span>
+            </div>
+            <p class="text-sm font-medium text-accent mt-1">Bachelor of Science (B.Sc.) in Biology — Sub-major: Marine Chemical Ecology</p>
+            <p class="text-sm text-muted mt-3">GPA: 3.36 / 4.00 · Active in HMD Biologi UI & Special Interest Group in Marine Biology UI (SIGMA-B UI)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-24">
+      <div class="p-8 sm:p-10 rounded-2xl bg-surface border border-line">
+        <div class="max-w-xl space-y-4">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-accent" data-en="05 / Contact" data-id="05 / Kontak">05 / Contact</h2>
+          <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink" data-en="Open to Senior Software QA Engineer opportunities." data-id="Terbuka untuk peluang Senior Software QA Engineer.">
+            Open to Senior Software QA Engineer opportunities.
+          </h3>
+          <p class="text-sm sm:text-base text-muted leading-relaxed" data-en="Available for roles in Jakarta or remote worldwide. Feel free to reach out directly via email or LinkedIn." data-id="Tersedia untuk posisi di Jakarta maupun remote dari mana saja. Silakan hubungi saya langsung melalui email atau LinkedIn.">
+            Available for roles in Jakarta or remote worldwide. Feel free to reach out directly via email or LinkedIn.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-3">
+            <a href="mailto:nadiafarahdhiba@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ink text-white text-sm font-medium hover:bg-accent transition-colors">
+              nadiafarahdhiba@gmail.com
+            </a>
+            <button onclick="copyEmail()" id="copy-btn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-line bg-canvas text-ink text-sm font-medium hover:border-ink transition-colors">
+              Copy email
+            </button>
+            <a href="https://www.linkedin.com/in/nadiafarahdhiba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-line bg-canvas text-ink text-sm font-medium hover:border-ink transition-colors">
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-line py-8 text-center text-xs text-muted font-mono">
+    © 2026 Nadia Farah Dhiba · Built for GitHub Pages
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      const btnEn = document.getElementById('btn-en');
+      const btnId = document.getElementById('btn-id');
+      if (lang === 'en') {
+        btnEn.className = 'px-2.5 py-1 rounded-md bg-ink text-white font-medium transition-colors';
+        btnId.className = 'px-2.5 py-1 rounded-md text-muted hover:text-ink transition-colors';
+      } else {
+        btnId.className = 'px-2.5 py-1 rounded-md bg-ink text-white font-medium transition-colors';
+        btnEn.className = 'px-2.5 py-1 rounded-md text-muted hover:text-ink transition-colors';
+      }
+    }
+
+    function filterSkills(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.className = 'filter-btn px-3 py-1.5 rounded-lg bg-surface border border-line text-muted hover:text-ink';
+      });
+      btn.className = 'filter-btn px-3 py-1.5 rounded-lg bg-ink text-white';
+
+      document.querySelectorAll('#skills-grid [data-cat]').forEach(pill => {
+        if (category === 'all' || pill.getAttribute('data-cat') === category) {
+          pill.style.display = 'inline-flex';
+        } else {
+          pill.style.display = 'none';
+        }
+      });
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('nadiafarahdhiba@gmail.com');
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = 'Copy email'; }, 2000);
+    }
+  </script>
+</body>
+</html>
