@@ -110,6 +110,17 @@ a { color: inherit; }
 
 .hero { padding: 72px 0 28px; }
 
+.portrait {
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin: 0 0 22px;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
 .kicker {
   margin: 0 0 14px;
   font-size: 0.75rem;
