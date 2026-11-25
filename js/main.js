@@ -1,7 +1,8 @@
 /* Edit this object to change the page.
-   Leave email, phone, and city empty until the real values are known.
-   Add achievements to a job's bullets array.
-   Add tool names to tools, and certifications to certifications. */
+   Email, city, and phone: contact.email, contact.city, contact.phone.
+   School: education.degree, education.school, education.years, education.notes.
+   Tools: add a name to the matching items list under tools.
+   A job's details are its bullets array. */
 const RESUME = {
   name: "Nadia Farah Dhiba",
   nav: {
@@ -14,27 +15,21 @@ const RESUME = {
     ]
   },
   hero: {
-    kicker: "Quality assurance",
+    kicker: "Software QA engineer",
     givenName: "Nadia",
     familyName: "Farah Dhiba",
     tagline: "I make sure software does what it promises.",
-    roleLine: "Senior Software Tester, Ninja Van · Indonesia",
+    roleLine: "Senior Software QA Engineer · Jakarta, Indonesia",
     viewExperience: "View experience",
     contact: "Contact me"
   },
-  stats: [
-    { value: "~9", label: "years working, from 2017" },
-    { value: "~8", label: "years in testing, from 2018" },
-    { value: "2023", label: "senior tester at Ninja Van" }
-  ],
-  statsNote: "Approximate, counted from public dates.",
   about: {
     kicker: "About",
     title: "What I do",
     paragraphs: [
-      "I test software. I read what a product is supposed to do, turn that into test cases, run them, and write down what fails so it can be fixed.",
-      "I have worked this way for about eight years, on agile teams. The longest run is at Ninja Van: software tester from 2020, senior software tester since February 2023. I have also tested at ASTRO, at Mapan through SQUADAP, and at Bukalapak, where the testing work began with user acceptance.",
-      "Alongside the testing itself I keep test cases in order, record defects, and follow the debugging that comes after a bug is found."
+      "I am a senior software QA engineer with 8+ years of testing across mobile apps, websites, and APIs, mostly in logistics and e-commerce.",
+      "The work is manual and end to end: functional, regression, smoke, sanity, and user acceptance testing. I write test plans and cases, including Gherkin, and I look for edge cases with product managers, developers, and regional squads before a release.",
+      "I also work with automation engineers on regression runs and failed builds, mentor other testers, and use AI-assisted tools for test-case design, log analysis, and QA notes."
     ]
   },
   skills: {
@@ -43,20 +38,20 @@ const RESUME = {
     groupsTitle: "What I practice",
     groups: [
       {
-        name: "Software testing",
-        detail: "Checking that a product behaves the way it was specified."
+        name: "Manual testing",
+        detail: "Mobile, web, and API. End-to-end, functional, regression, smoke, sanity, and user acceptance testing."
       },
       {
-        name: "Agile delivery",
-        detail: "Testing as part of an agile software team."
+        name: "Test design",
+        detail: "Test plans and cases, written by hand and in Gherkin. Positive and negative paths, plus exploratory UX testing."
       },
       {
-        name: "Test-case management",
-        detail: "Turning requirements into cases that can be run again."
+        name: "Automation support",
+        detail: "Regression runs and failed-build triage with automation engineers. Scripting with Python, Karate, Playwright, Maestro, and Testsaurus."
       },
       {
-        name: "Defect reporting",
-        detail: "Writing down what failed, clearly enough that it gets fixed."
+        name: "Domain",
+        detail: "Logistics and supply chain, including first mile, last mile, PUDO, and hub or sort operations. E-commerce partnerships. Agile and Scrum."
       }
     ],
     process: [
@@ -67,32 +62,45 @@ const RESUME = {
       { title: "Release", detail: "Follow the debugging and check the fix." }
     ]
   },
-  /* Tool names stay empty until Nadia supplies the ones she uses. */
-  tools: [],
-  toolsEmpty: "Add the tools you use.",
+  toolsTitle: "Tools",
+  /* Add a tool by putting its name in the matching items list. */
+  tools: [
+    { name: "API and data", items: ["Postman", "Apidog", "cURL", "MySQL", "TiDB", "DBeaver"] },
+    { name: "Monitoring", items: ["Kibana", "Grafana", "Metabase"] },
+    { name: "Test management", items: ["Jira", "Confluence", "Cucumber Studio", "Smartphone Test Farm"] },
+    { name: "Delivery", items: ["Bamboo", "GitHub", "Bitbucket", "IntelliJ"] },
+    { name: "Automation", items: ["Python", "Karate", "Playwright", "Maestro", "Testsaurus"] }
+  ],
   experience: {
     kicker: "Experience",
     title: "Where I have worked",
     earlier: "Earlier",
     jobs: [
       {
-        when: "2023 — Now",
-        period: "February 2023 — Present",
+        when: "2023 — 2026",
+        period: "February 2023 — December 2026",
         role: "Senior Software Tester",
         company: "Ninja Van",
-        scope: "Senior software testing for Ninja Van.",
+        scope: "",
         bullets: [
-          /* Add real achievements here. */
+          "Led end-to-end manual and regression testing across First Mile, Last Mile, PUDO, and Ninja Mart — mobile apps, web, and APIs, in QA and production. That work supported 100% automation test coverage, 96.3% tech delivery quality, and a 5.0/5.0 testing efficiency rating across First Mile (5.0), Last Mile (5.0), and PUDO (4.85).",
+          "Contributed to QA on 5+ major regional initiatives: process flows, early corner cases, risk checks, and test strategy.",
+          "QA person-in-charge for First Mile, and also tested Last Mile, PUDO, and Ninja Mart. Coordinated sprint tasks and onboarded new testers on the QA workflow and product architecture.",
+          "Worked with developers and squads in Indonesia, Malaysia, the Philippines, Singapore, Thailand, and Vietnam. Triaged operations tech-support tickets, ran eligible in-sprint tickets through existing automation, and investigated failed regression runs with automation engineers. Execution runtime reduction scored 98.3%.",
+          "Led test-scenario reduction and reprioritization for First Mile, Last Mile, and PUDO, tracked in Metabase. Used AI-assisted tools for task tracking, scenario data, Python and Testsaurus migrations, and daily QA notes."
         ]
       },
       {
         when: "2022 — 2023",
         period: "September 2022 — January 2023",
         role: "QA Engineer",
-        company: "ASTRO",
-        scope: "Quality assurance engineering at ASTRO.",
+        company: "PT Astro Technologies Indonesia",
+        scope: "",
         bullets: [
-          /* Add real achievements here. */
+          "Read functional specifications with the product team, set the testing scope, and designed scenarios against the business requirements.",
+          "Ran end-to-end testing on Astro's mobile apps, web, and APIs in staging and production.",
+          "Ran regression and sanity checks before and after deployment.",
+          "Logged, prioritized, and tracked defects to a fix in Jira."
         ]
       },
       {
@@ -100,19 +108,25 @@ const RESUME = {
         period: "April 2020 — September 2022",
         role: "Software Tester",
         company: "Ninja Van",
-        scope: "Software testing for Ninja Van.",
+        scope: "",
         bullets: [
-          /* Add real achievements here. */
+          "QA person-in-charge for two squads, Partnership Integration and CoreV2, under the mile0 vertical. Distributed sprint work, supervised 5 QA engineers, and worked across verticals.",
+          "Wrote test plans and cases with the product team, then ran manual, regression, smoke, and UAT across client and server products, APIs, and server infrastructure.",
+          "Worked with engineering on defects, test reports, and the final QA sign-off for a release.",
+          "Set QA practices and standard workflows, and looked for bottlenecks in how the team delivered.",
+          "Worked with QA automation engineers on coverage, and wrote product notes that made onboarding faster."
         ]
       },
       {
         when: "2019 — 2020",
         period: "September 2019 — April 2020",
         role: "Software Quality Assurance",
-        company: "Mapan",
-        scope: "Quality assurance for Mapan, through SQUADAP (PT Sistem Pengujian Pratama).",
+        company: "Mapan — PT Ruma",
+        scope: "Placed through PT Sistem Pengujian Pratama.",
         bullets: [
-          /* Add real achievements here. */
+          "Tested the SAP project that supported the finance team, and checked that in-project deployments held up.",
+          "Folded business and delivery requirements into the test schedule and the release-readiness check.",
+          "Worked with developers on database, performance, and system issues before deployment."
         ]
       },
       {
@@ -120,9 +134,12 @@ const RESUME = {
         period: "July 2019 — September 2019",
         role: "Software Quality Analyst",
         company: "Bukalapak",
-        scope: "Software quality analysis at Bukalapak.",
+        scope: "",
         bullets: [
-          /* Add real achievements here. */
+          "Ran manual, regression, and user acceptance testing on the Bukalapak app in Agile and Scrum, before production.",
+          "Wrote positive and negative cases in a standard format and in Gherkin, and set a testing process for new and existing features.",
+          "Worked with product managers, developers, and UI/UX designers through the delivery cycle.",
+          "Tracked defects to a fix in Jira and gave the QA sign-off for a release."
         ]
       },
       {
@@ -130,9 +147,12 @@ const RESUME = {
         period: "May 2018 — July 2019",
         role: "User Acceptance Tester",
         company: "Bukalapak",
-        scope: "User acceptance testing at Bukalapak.",
+        scope: "",
         bullets: [
-          /* Add real achievements here. */
+          "Actor lead for user acceptance testing: supervised the full test pass, split user-journey scope across testers, interviewed UAT candidates, and sent testing reports to the squads.",
+          "Designed and ran positive and negative cases against end-to-end user journeys, including exploratory UX and manual testing in beta and production.",
+          "Found usability bottlenecks, wrote up defects, checked fixes through to closure, and gave developers an end-user view of open issues.",
+          "Kept cross-functional teams current on progress, quality standards, and obstacles in the test pass."
         ]
       },
       {
@@ -140,10 +160,11 @@ const RESUME = {
         period: "December 2017 — May 2018",
         role: "Customer Support — Email",
         company: "Bukalapak",
-        scope: "Email customer support at Bukalapak.",
+        scope: "",
         earlier: true,
         bullets: [
-          /* Add real achievements here. */
+          "Handled a high volume of customer email, including complaints, and looked for the cause before answering.",
+          "Wrote down issues that kept coming back, and escalated technical or operational tickets to engineering and operations."
         ]
       },
       {
@@ -151,10 +172,11 @@ const RESUME = {
         period: "August 2017 — October 2017",
         role: "Social Media Executive",
         company: "Activate Media Nusantara",
-        scope: "Social media work at Activate Media Nusantara.",
+        scope: "",
         earlier: true,
         bullets: [
-          /* Add real achievements here. */
+          "Watched brand social accounts, coordinated influencer work, and lined up daily creative briefs with the digital and creative teams.",
+          "Took part in brand activation and digital campaign work."
         ]
       }
     ]
@@ -162,20 +184,25 @@ const RESUME = {
   education: {
     kicker: "Education",
     title: "Study",
-    degree: "Bachelor of Science",
-    school: "University of Indonesia",
-    years: "2012 — 2016"
+    degree: "Bachelor of Science in Biology",
+    detail: "Sub-major: Marine Chemical Ecology",
+    school: "Universitas Indonesia",
+    years: "2012 — 2016",
+    notes: [
+      "GPA 3.36 / 4.00, 146 credits",
+      "HMD Biologi UI",
+      "Special Interest Group in Marine Biology UI (SIGMA-B UI)"
+    ]
   },
-  /* Certifications stay empty until Nadia supplies them. The major is omitted on purpose. */
+  /* Add a certification by putting a line in this list. An empty list stays hidden. */
   certifications: [],
-  certificationsEmpty: "Add certifications here.",
   contact: {
     kicker: "Contact",
     title: "How to reach me",
-    intro: "LinkedIn is the public contact. Email, phone, and city are waiting on the real details.",
-    email: "",
+    intro: "Email and LinkedIn are the direct ways to reach me.",
+    email: "nadiafarahdhiba@gmail.com",
     phone: "",
-    city: "",
+    city: "Jakarta",
     country: "Indonesia",
     linkedin: {
       label: "nadiafarahdhiba",
@@ -233,16 +260,6 @@ function fillNav() {
   });
 }
 
-function fillStats() {
-  const row = document.querySelector("[data-stats]");
-  RESUME.stats.forEach((stat) => {
-    const item = el("div", "stat");
-    item.append(el("b", null, stat.value));
-    item.append(el("span", null, stat.label));
-    row.append(item);
-  });
-}
-
 function fillProcess() {
   const list = document.querySelector("[data-process]");
   RESUME.skills.process.forEach((step, index) => {
@@ -268,12 +285,13 @@ function fillSkills() {
 
 function fillTools() {
   const slot = document.querySelector("[data-tools]");
-  if (RESUME.tools.length === 0) {
-    slot.append(el("p", "unfilled", RESUME.toolsEmpty));
-    return;
-  }
-  const list = el("ul", "tool-list");
-  RESUME.tools.forEach((tool) => list.append(el("li", null, tool)));
+  const list = el("ul", "skill-list");
+  RESUME.tools.forEach((group) => {
+    const item = el("li");
+    item.append(el("h3", null, group.name));
+    item.append(el("p", null, group.items.join(" · ")));
+    list.append(item);
+  });
   slot.append(list);
 }
 
@@ -291,7 +309,7 @@ function fillJobs() {
     body.append(el("h3", null, job.role));
     body.append(el("p", "company", job.company));
     body.append(el("p", "period", job.period));
-    body.append(el("p", "scope", job.scope));
+    if (job.scope) body.append(el("p", "scope", job.scope));
     const written = job.bullets.filter((bullet) => String(bullet).trim());
     if (written.length) {
       const list = el("ul");
@@ -305,16 +323,21 @@ function fillJobs() {
 
 function fillDegree() {
   const slot = document.querySelector("[data-degree]");
+  const study = RESUME.education;
   slot.className = "degree";
-  slot.append(el("h3", null, RESUME.education.degree));
-  slot.append(el("p", "company", RESUME.education.school));
-  slot.append(el("p", null, RESUME.education.years));
+  slot.append(el("h3", null, study.degree));
+  if (study.detail) slot.append(el("p", null, study.detail));
+  slot.append(el("p", "company", study.school));
+  slot.append(el("p", null, study.years));
+  (study.notes || []).forEach((note) => slot.append(el("p", null, note)));
 }
 
 function fillCerts() {
   const slot = document.querySelector("[data-certs]");
+  if (!slot) return;
   if (RESUME.certifications.length === 0) {
-    slot.append(el("p", "unfilled", RESUME.certificationsEmpty));
+    slot.remove();
+    document.querySelector(".edu").classList.add("edu-single");
     return;
   }
   const list = el("ul", "tool-list");
@@ -379,10 +402,9 @@ function fillContact() {
   addContactRow(list, labels.email, emailLine);
 
   const phone = RESUME.contact.phone.trim();
-  const phoneNode = phone
-    ? contactValue(phone, `tel:${phone.replace(/[^\d+]/g, "")}`)
-    : placeholder(missing.phone);
-  addContactRow(list, labels.phone, phoneNode);
+  if (phone) {
+    addContactRow(list, labels.phone, contactValue(phone, `tel:${phone.replace(/[^\d+]/g, "")}`));
+  }
 
   const location = el("div", "value-line");
   const city = RESUME.contact.city.trim();
@@ -416,7 +438,6 @@ function reveal() {
 fillFields();
 fillParagraphs();
 fillNav();
-fillStats();
 fillProcess();
 fillSkills();
 fillTools();

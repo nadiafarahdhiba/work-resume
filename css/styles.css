@@ -366,6 +366,8 @@ a { color: inherit; }
   align-items: start;
 }
 
+.edu-single { grid-template-columns: minmax(0, 36rem); }
+
 .degree { padding-top: 4px; }
 
 .intro { color: var(--muted); }
