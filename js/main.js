@@ -275,27 +275,80 @@ function fillProcess() {
   });
 }
 
-function fillSkills() {
-  const list = document.querySelector("[data-skills]");
-  RESUME.skills.groups.forEach((group) => {
-    const item = el("li");
-    item.append(el("h3", null, group.name));
-    item.append(el("p", null, group.detail));
-    list.append(item);
+function makePicker(label) {
+  const picker = el("div", "picker");
+  picker.setAttribute("role", "tablist");
+  picker.setAttribute("aria-label", label);
+  return picker;
+}
+
+function showTab(buttons, index) {
+  buttons.forEach((button, step) => {
+    const on = step === index;
+    button.setAttribute("aria-selected", on ? "true" : "false");
+    button.tabIndex = on ? 0 : -1;
   });
+}
+
+function fillSkills() {
+  const slot = document.querySelector("[data-skills]");
+  const groups = RESUME.skills.groups;
+  const picker = makePicker(RESUME.skills.groupsTitle);
+  const panel = el("div", "practice-panel");
+  panel.id = "practice-panel";
+  panel.setAttribute("role", "tabpanel");
+  const buttons = groups.map((group, index) => {
+    const button = el("button", null, group.name);
+    button.type = "button";
+    button.id = `practice-tab-${index}`;
+    button.setAttribute("role", "tab");
+    button.setAttribute("aria-controls", panel.id);
+    return button;
+  });
+  buttons.forEach((button) => picker.append(button));
+  const show = (index) => {
+    showTab(buttons, index);
+    panel.replaceChildren(el("p", null, groups[index].detail));
+    panel.setAttribute("aria-labelledby", buttons[index].id);
+  };
+  buttons.forEach((button, index) => button.addEventListener("click", () => show(index)));
+  slot.replaceChildren(picker, panel);
+  show(0);
 }
 
 function fillTools() {
   const slot = document.querySelector("[data-tools]");
-  const list = el("ul", "skill-list");
-  RESUME.tools.forEach((group) => {
-    const item = el("li");
-    item.append(el("h3", null, group.name));
-    item.append(el("p", null, group.items.join(" · ")));
-    if (group.note) item.append(el("p", null, group.note));
-    list.append(item);
+  const groups = RESUME.tools;
+  const picker = makePicker(RESUME.toolsTitle);
+  const panel = el("div", "tool-panel");
+  panel.id = "tool-panel";
+  panel.setAttribute("role", "tabpanel");
+  const buttons = groups.map((group, index) => {
+    const button = el("button", null, group.name);
+    button.type = "button";
+    button.id = `tool-tab-${index}`;
+    button.setAttribute("role", "tab");
+    button.setAttribute("aria-controls", panel.id);
+    return button;
   });
-  slot.append(list);
+  buttons.forEach((button) => picker.append(button));
+  const show = (index) => {
+    showTab(buttons, index);
+    const group = groups[index];
+    const chips = el("div", "chips");
+    group.items.forEach((name, chipIndex) => {
+      const chip = el("span", "chip", name);
+      chip.style.animationDelay = `${chipIndex * 70}ms`;
+      chips.append(chip);
+    });
+    const parts = [chips];
+    if (group.note) parts.push(el("p", "tool-note", group.note));
+    panel.replaceChildren(...parts);
+    panel.setAttribute("aria-labelledby", buttons[index].id);
+  };
+  buttons.forEach((button, index) => button.addEventListener("click", () => show(index)));
+  slot.replaceChildren(picker, panel);
+  show(0);
 }
 
 function fillJobs() {
