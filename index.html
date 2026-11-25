@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nadia Farah Dhiba — Senior Software Tester</title>
+<meta name="description" content="Nadia Farah Dhiba, senior software tester at Ninja Van. Experience, how she tests, and how to get in touch.">
+<meta name="theme-color" content="#f3efe6">
+<meta property="og:title" content="Nadia Farah Dhiba — Senior Software Tester">
+<meta property="og:description" content="A resume: testing work at Ninja Van, ASTRO, Mapan, and Bukalapak.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add("js");</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#about">Skip to about</a>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Nadia Farah Dhiba</a>
+    <nav class="links" aria-label="Sections" data-nav></nav>
+    <a class="nav-contact" href="#contact" data-field="nav.contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <!-- Portrait: add an image here when you have one. Until then the name is the visual. -->
+      <p class="kicker" data-field="hero.kicker"></p>
+      <h1 class="name">
+        <span data-field="hero.givenName"></span>
+        <span data-field="hero.familyName"></span>
+      </h1>
+      <p class="tagline" data-field="hero.tagline"></p>
+      <p class="role-line" data-field="hero.roleLine"></p>
+      <p class="cta">
+        <a href="#experience" data-field="hero.viewExperience"></a>
+        <a href="#contact" data-field="hero.contact"></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="stats reveal" aria-label="At a glance">
+    <div class="wrap">
+      <div class="stat-row" data-stats></div>
+      <p class="stat-note" data-field="statsNote"></p>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker" data-field="about.kicker"></p>
+        <h2 class="title" data-field="about.title"></h2>
+      </div>
+      <div class="prose" data-paragraphs="about.paragraphs"></div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="skills">
+    <div class="wrap">
+      <p class="kicker" data-field="skills.kicker"></p>
+      <h2 class="title" data-field="skills.title"></h2>
+      <ol class="process" data-process></ol>
+      <h3 class="subhead" data-field="skills.groupsTitle"></h3>
+      <ul class="skill-list" data-skills></ul>
+      <div data-tools></div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="experience">
+    <!-- Add real achievement bullets in js/main.js, on each job's bullets array. -->
+    <div class="wrap">
+      <p class="kicker" data-field="experience.kicker"></p>
+      <h2 class="title" data-field="experience.title"></h2>
+      <div class="jobs" data-jobs></div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="education">
+    <div class="wrap">
+      <p class="kicker" data-field="education.kicker"></p>
+      <h2 class="title" data-field="education.title"></h2>
+      <div class="edu">
+        <article data-degree></article>
+        <div data-certs></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="contact">
+    <div class="wrap">
+      <p class="kicker" data-field="contact.kicker"></p>
+      <h2 class="title" data-field="contact.title"></h2>
+      <p class="intro" data-field="contact.intro"></p>
+      <dl class="contact-list" data-contact></dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span data-footer></span>
+    <a href="#top" data-field="backToTop"></a>
+  </div>
+</footer>
+
+<noscript>
+  <p class="wrap noscript">This resume is drawn from js/main.js. Enable JavaScript to read it.</p>
+</noscript>
+</body>
+</html>
