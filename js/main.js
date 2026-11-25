@@ -51,8 +51,12 @@ const RESUME = {
         detail: "Regression runs and failed-build triage with automation engineers. I have some experience with Python, Playwright, and Maestro, using AI while I work in them."
       },
       {
+        name: "Ways of working",
+        detail: "Agile and Scrum, inside a normal software delivery cycle."
+      },
+      {
         name: "Domain",
-        detail: "Logistics and supply chain, including first mile, last mile, PUDO, and hub or sort operations. E-commerce partnerships. Agile and Scrum."
+        detail: "Logistics and supply chain, including first mile, last mile, PUDO, and hub or sort operations. E-commerce partnerships."
       }
     ],
     process: [
@@ -275,80 +279,31 @@ function fillProcess() {
   });
 }
 
-function makePicker(label) {
-  const picker = el("div", "picker");
-  picker.setAttribute("role", "tablist");
-  picker.setAttribute("aria-label", label);
-  return picker;
-}
-
-function showTab(buttons, index) {
-  buttons.forEach((button, step) => {
-    const on = step === index;
-    button.setAttribute("aria-selected", on ? "true" : "false");
-    button.tabIndex = on ? 0 : -1;
-  });
-}
-
 function fillSkills() {
   const slot = document.querySelector("[data-skills]");
-  const groups = RESUME.skills.groups;
-  const picker = makePicker(RESUME.skills.groupsTitle);
-  const panel = el("div", "practice-panel");
-  panel.id = "practice-panel";
-  panel.setAttribute("role", "tabpanel");
-  const buttons = groups.map((group, index) => {
-    const button = el("button", null, group.name);
-    button.type = "button";
-    button.id = `practice-tab-${index}`;
-    button.setAttribute("role", "tab");
-    button.setAttribute("aria-controls", panel.id);
-    return button;
+  const board = el("div", "card-grid");
+  RESUME.skills.groups.forEach((group) => {
+    const card = el("article", "info-card");
+    card.append(el("h3", null, group.name));
+    card.append(el("p", null, group.detail));
+    board.append(card);
   });
-  buttons.forEach((button) => picker.append(button));
-  const show = (index) => {
-    showTab(buttons, index);
-    panel.replaceChildren(el("p", null, groups[index].detail));
-    panel.setAttribute("aria-labelledby", buttons[index].id);
-  };
-  buttons.forEach((button, index) => button.addEventListener("click", () => show(index)));
-  slot.replaceChildren(picker, panel);
-  show(0);
+  slot.replaceChildren(board);
 }
 
 function fillTools() {
   const slot = document.querySelector("[data-tools]");
-  const groups = RESUME.tools;
-  const picker = makePicker(RESUME.toolsTitle);
-  const panel = el("div", "tool-panel");
-  panel.id = "tool-panel";
-  panel.setAttribute("role", "tabpanel");
-  const buttons = groups.map((group, index) => {
-    const button = el("button", null, group.name);
-    button.type = "button";
-    button.id = `tool-tab-${index}`;
-    button.setAttribute("role", "tab");
-    button.setAttribute("aria-controls", panel.id);
-    return button;
-  });
-  buttons.forEach((button) => picker.append(button));
-  const show = (index) => {
-    showTab(buttons, index);
-    const group = groups[index];
+  const board = el("div", "card-grid");
+  RESUME.tools.forEach((group) => {
+    const card = el("article", "info-card");
+    card.append(el("h3", null, group.name));
     const chips = el("div", "chips");
-    group.items.forEach((name, chipIndex) => {
-      const chip = el("span", "chip", name);
-      chip.style.animationDelay = `${chipIndex * 70}ms`;
-      chips.append(chip);
-    });
-    const parts = [chips];
-    if (group.note) parts.push(el("p", "tool-note", group.note));
-    panel.replaceChildren(...parts);
-    panel.setAttribute("aria-labelledby", buttons[index].id);
-  };
-  buttons.forEach((button, index) => button.addEventListener("click", () => show(index)));
-  slot.replaceChildren(picker, panel);
-  show(0);
+    group.items.forEach((name) => chips.append(el("span", "chip", name)));
+    card.append(chips);
+    if (group.note) card.append(el("p", "tool-note", group.note));
+    board.append(card);
+  });
+  slot.replaceChildren(board);
 }
 
 function fillJobs() {

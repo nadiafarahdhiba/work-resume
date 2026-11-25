@@ -277,7 +277,7 @@ a { color: inherit; }
 .process li.is-on h3 { background-size: 100% 1px; }
 
 .process h3,
-.skill-list h3,
+.info-card h3,
 .degree h3 {
   margin: 0;
   font-family: var(--serif);
@@ -287,7 +287,7 @@ a { color: inherit; }
 }
 
 .process p,
-.skill-list p,
+.info-card p,
 .degree p,
 .job .scope,
 .job .period {
@@ -303,47 +303,19 @@ a { color: inherit; }
   letter-spacing: -0.02em;
 }
 
-.picker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 22px;
-  margin-top: 22px;
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
 }
 
-.picker button {
-  appearance: none;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  background: none;
-  padding: 8px 0;
-  min-height: 44px;
-  color: var(--muted);
-  font: 600 1.05rem/1 var(--serif);
-  letter-spacing: -0.02em;
-  cursor: pointer;
+.info-card {
+  border: 1px solid var(--line);
+  padding: 22px;
 }
 
-.picker button[aria-selected="true"] {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.practice-panel {
-  margin-top: 8px;
-  max-width: 40rem;
-  min-height: 5.5rem;
-}
-
-.practice-panel p {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  line-height: 1.4;
-  color: var(--ink);
-  animation: rise 0.45s ease;
-}
-
-.tool-panel { margin-top: 18px; min-height: 6.5rem; }
+.info-card .chips { margin-top: 14px; }
 
 .chips {
   display: flex;
@@ -566,7 +538,7 @@ footer a { color: var(--accent); text-underline-offset: 3px; }
 
   .about-grid,
   .edu,
-  .skill-list,
+  .card-grid,
   .stat-row,
   .job,
   .contact-row {
@@ -609,7 +581,6 @@ footer a { color: var(--accent); text-underline-offset: 3px; }
   .process h3,
   .process li.is-on h3 { transition: none; background-size: 0 0; }
 
-  .practice-panel p,
   .chip { animation: none; }
 }
 
