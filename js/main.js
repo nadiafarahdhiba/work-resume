@@ -40,23 +40,23 @@ const RESUME = {
     groups: [
       {
         name: "Manual testing",
-        detail: "Mobile, web, and API. End-to-end, functional, regression, smoke, sanity, and user acceptance testing."
+        detail: "I test mobile apps, websites, and APIs by hand: end to end, functional, regression, smoke, sanity, and user acceptance."
       },
       {
         name: "Test design",
-        detail: "Test plans and cases, written by hand and in Gherkin. Positive and negative paths, plus exploratory UX testing."
+        detail: "I write the plan and the cases, by hand and in Gherkin, for the path that should work, the one that should fail, and what turns up when I explore."
       },
       {
         name: "Automation support",
-        detail: "Regression runs and failed-build triage with automation engineers. I have some experience with Python, Playwright, and Maestro, using AI while I work in them."
+        detail: "I sit with automation engineers on regression runs and failed builds. Python, Playwright, and Maestro are tools I have used with AI, not a specialty I claim."
       },
       {
         name: "Ways of working",
-        detail: "Agile and Scrum, inside a normal software delivery cycle."
+        detail: "I work in Agile and Scrum, as part of a normal delivery cycle."
       },
       {
         name: "Domain",
-        detail: "Logistics and supply chain, including first mile, last mile, PUDO, and hub or sort operations. E-commerce partnerships."
+        detail: "Most of the work has been logistics and supply chain — first mile, last mile, PUDO, hubs and sort — and e-commerce partnerships."
       }
     ],
     process: [
@@ -281,27 +281,27 @@ function fillProcess() {
 
 function fillSkills() {
   const slot = document.querySelector("[data-skills]");
-  const board = el("div", "card-grid");
+  const board = el("div", "practice");
   RESUME.skills.groups.forEach((group) => {
-    const card = el("article", "info-card");
-    card.append(el("h3", null, group.name));
-    card.append(el("p", null, group.detail));
-    board.append(card);
+    const item = el("article");
+    item.append(el("h3", null, group.name));
+    item.append(el("p", null, group.detail));
+    board.append(item);
   });
   slot.replaceChildren(board);
 }
 
 function fillTools() {
   const slot = document.querySelector("[data-tools]");
-  const board = el("div", "card-grid");
+  const board = el("div", "tool-flow");
   RESUME.tools.forEach((group) => {
-    const card = el("article", "info-card");
-    card.append(el("h3", null, group.name));
-    const chips = el("div", "chips");
-    group.items.forEach((name) => chips.append(el("span", "chip", name)));
-    card.append(chips);
-    if (group.note) card.append(el("p", "tool-note", group.note));
-    board.append(card);
+    const item = el("article");
+    item.append(el("h3", null, group.name));
+    const names = el("p", "tool-names");
+    group.items.forEach((name) => names.append(el("span", null, name)));
+    item.append(names);
+    if (group.note) item.append(el("p", "tool-note", group.note));
+    board.append(item);
   });
   slot.replaceChildren(board);
 }
