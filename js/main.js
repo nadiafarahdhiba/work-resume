@@ -72,8 +72,11 @@ const RESUME = {
   tools: [
     {
       name: "Test management",
-      items: ["Jira", "Cucumber Studio", "Testsaurus"],
-      note: "Testsaurus is Ninja Van’s internal test management platform."
+      items: [
+        "Jira",
+        "Cucumber Studio",
+        { name: "Testsaurus", note: "Ninja Van’s internal test management platform" }
+      ]
     },
     { name: "Documentation", items: ["Confluence"] },
     { name: "Devices", items: ["Smartphone Test Farm", "Vysor"] },
@@ -298,9 +301,14 @@ function fillTools() {
     const item = el("article");
     item.append(el("h3", null, group.name));
     const names = el("p", "tool-names");
-    group.items.forEach((name) => names.append(el("span", null, name)));
+    group.items.forEach((entry) => {
+      const tool = typeof entry === "string" ? { name: entry } : entry;
+      const name = el("span");
+      name.append(el("span", "tool-label", tool.name));
+      if (tool.note) name.append(el("small", null, tool.note));
+      names.append(name);
+    });
     item.append(names);
-    if (group.note) item.append(el("p", "tool-note", group.note));
     board.append(item);
   });
   slot.replaceChildren(board);

@@ -373,19 +373,30 @@ a { color: inherit; }
   color: var(--ink);
 }
 
-.tool-names span:not(:last-child)::after {
+.tool-names > span:not(:last-child):not(:has(+ span small))::after {
   content: ",";
   margin-right: 0.35em;
   color: var(--muted);
 }
 
-.tool-note {
-  margin: 8px 0 0;
-  max-width: 36em;
-  color: var(--muted);
-  font-family: var(--serif);
+.tool-names > span:has(small) {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55em;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.tool-names small {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
   font-style: italic;
-  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 .unfilled {
